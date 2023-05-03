@@ -2,7 +2,6 @@ package co.com.umb.crowdfunding.arquitectura.infrastructure.driveradapter.custom
 
 import co.com.umb.crowdfunding.arquitectura.domain.model.CustomerModel;
 import co.com.umb.crowdfunding.arquitectura.domain.model.gateway.CustomerModelRepository;
-import co.com.umb.crowdfunding.arquitectura.domain.model.gateway.ICrudModelRepositoryGeneric;
 import co.com.umb.crowdfunding.arquitectura.infrastructure.driveradapter.customerpostgresql.helper.CustomerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -19,6 +18,12 @@ public class CustomerAdapterImpl implements CustomerModelRepository {
     @Override
     public CustomerModel getById(int id) {
         return null;
+    }
+
+    @Override
+    public CustomerModel getByEmail(String email) {
+        var dataCustomer = customerRepository.findCustomerByEmail(email);
+        return customerMapper.toModel(dataCustomer);
     }
 
     @Override

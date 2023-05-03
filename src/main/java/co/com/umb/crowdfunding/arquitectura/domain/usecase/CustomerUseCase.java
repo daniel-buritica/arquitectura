@@ -2,7 +2,6 @@ package co.com.umb.crowdfunding.arquitectura.domain.usecase;
 
 import co.com.umb.crowdfunding.arquitectura.domain.model.CustomerModel;
 import co.com.umb.crowdfunding.arquitectura.domain.model.gateway.CustomerModelRepository;
-import co.com.umb.crowdfunding.arquitectura.domain.model.gateway.ICrudModelRepositoryGeneric;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +15,9 @@ public class CustomerUseCase {
 
     public CustomerModel getById(int id){
         return customerModelRepository.getById(id);
+    }
+    public CustomerModel getByEmail(String email){
+        return customerModelRepository.getByEmail(email);
     }
 
     public CustomerModel create(CustomerModel customerModel){

@@ -15,4 +15,6 @@ public class CountryModel {
     private String iso;
     private String country;
     private IndicatorCountryModel indicatorCountryModel;
+
+
 }

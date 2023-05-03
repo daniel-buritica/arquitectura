@@ -25,4 +25,9 @@ public class CustomerService {
         return customerUseCase.exitsCustomer(email);
     }
 
+    @GetMapping("/customer/findByEmail/{email}")
+    public CustomerModel findByEmail(@PathVariable String email){
+        return customerUseCase.getByEmail(email);
+    }
+
 }

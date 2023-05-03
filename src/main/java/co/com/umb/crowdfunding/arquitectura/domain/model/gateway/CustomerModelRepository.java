@@ -7,6 +7,7 @@ import java.util.List;
 public interface CustomerModelRepository {
 
     public CustomerModel getById(int id);
+    public CustomerModel getByEmail(String email);
     public CustomerModel create(CustomerModel customerModel);
     public void delete(int id);
     public List<CustomerModel> getAll ();
